@@ -53,7 +53,6 @@ namespace EShopOnline.Pages
 
                     driver.FindElement(ConinueShopp).Click();
                 }
-                break;
             }
 
 
