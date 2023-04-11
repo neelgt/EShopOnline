@@ -10,6 +10,11 @@ namespace EShopOnline.Pages
     public class CheckoutPage
     {
         private IWebDriver driver;
+        public void scrollDown()
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0,document.body.scrollHeight)");
+            Thread.Sleep(1000);
+        }
 
         public CheckoutPage(IWebDriver driver)
         {
@@ -20,8 +25,7 @@ namespace EShopOnline.Pages
 
         public PlaceOrderPage ClickOnCheckout()
         {
-            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0,document.body.scrollHeight)");
-            Thread.Sleep(1000);
+            scrollDown();
             driver.FindElement(checkout).Click();
             return new PlaceOrderPage(driver);
         }

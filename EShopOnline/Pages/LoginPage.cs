@@ -33,10 +33,16 @@ namespace EShopOnline.Pages
         {
             driver.FindElement(log).Click();
             string email = driver.FindElement(By.XPath("(//img[@class='esh-identity-image'])[1]/parent::section/div")).Text;
-            
-            if (email != "LOGIN")
+            try
             {
-                Console.WriteLine("Valid Login");
+                if (email != "LOGIN")
+                {
+                    Console.WriteLine("Valid Login");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
             }
             return new AddItempage(driver);
         }

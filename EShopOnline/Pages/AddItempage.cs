@@ -11,6 +11,12 @@ namespace EShopOnline.Pages
 {
     public class AddItempage
     {
+        public void scrollDown()
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0,document.body.scrollHeight)");
+            Thread.Sleep(1000);
+        }
+
          IWebDriver driver;
 
         public AddItempage(IWebDriver driver)
@@ -48,12 +54,10 @@ namespace EShopOnline.Pages
                     //Add to cart
                     element.FindElement(Add).Click();
 
-                    ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0,document.body.scrollHeight)");
-                    Thread.Sleep(1000);
+                    scrollDown();
 
                     driver.FindElement(ConinueShopp).Click();
                 }
-                break;
             }
 
 

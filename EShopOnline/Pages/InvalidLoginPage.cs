@@ -37,12 +37,17 @@ namespace EShopOnline.Pages
         {
             driver.FindElement(validate).Click();
             bool msg = driver.FindElement(By.XPath("//form/div[1]")).Displayed;
-
-            if (msg == true)
+            try
             {
-                Console.WriteLine("Invalid input");
+                if (msg == true)
+                {
+                    Console.WriteLine("Invalid input");
+                }
             }
-            
+            catch(Exception e) 
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
         }
     }
 }

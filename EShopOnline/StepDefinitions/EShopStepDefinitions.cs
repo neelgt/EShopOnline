@@ -5,6 +5,8 @@ using System;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
 using OpenQA.Selenium.Firefox;
+using TechTalk.SpecFlow.Assist;
+using DocumentFormat.OpenXml.Office.CustomUI;
 
 namespace EShopOnline.StepDefinitions 
 {

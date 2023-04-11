@@ -13,6 +13,12 @@ namespace EShopOnline.Pages
     {
         private IWebDriver driver;
 
+        public void scrollDown()
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0,document.body.scrollHeight)");
+            Thread.Sleep(1000);
+        }
+
         public PlaceOrderPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -23,8 +29,7 @@ namespace EShopOnline.Pages
 
         public void CliclOnPayNow()
         {
-            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0,document.body.scrollHeight)");
-            Thread.Sleep(3000);
+            scrollDown();
             driver.FindElement(pay).Click();
 
             string expectedMessage = driver.FindElement(c_order).Text;
