@@ -45,22 +45,12 @@ namespace EShopOnline.StepDefinitions
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
-        [When(@"Enter email '([^']*)'")]
-        public void WhenEnterEmail(string email)
+        [When(@"Enter Credentials")]
+        public void WhenEnterCredentials(Table table)
         {
-            loginPage = new LoginPage(driver);
+            LoginPage loginPage = new LoginPage(driver);
 
-            loginPage.ClickOnEmail(email);
-            Thread.Sleep(1000);
-        }
-
-        [When(@"Enter password '([^']*)'")]
-        public void WhenEnterPassword(string pass)
-        {
-            loginPage = new LoginPage(driver);
-
-            loginPage.ClickOnPassword(pass);
-            Thread.Sleep(1000);
+            loginPage.EnterCredetial(table);
         }
 
         [Then(@"Successfull login")]

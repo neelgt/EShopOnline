@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using EShopOnline.Utility;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,14 +20,12 @@ namespace EShopOnline.Pages
         By password = By.XPath(".//*[@id='Input_Password']");
         By log = By.XPath(".//*[@class='btn btn-default']");
 
-        public void ClickOnEmail(string text)
+        public void EnterCredetial(Table table)
         {
-            driver.FindElement(email).Clear();
-            driver.FindElement(email).SendKeys(text);
-        }
-        public void ClickOnPassword(string text) 
-        {
-            driver.FindElement(password).SendKeys(text);
+            var dictionary = TableToDict.ToDict(table);
+
+            driver.FindElement(email).SendKeys(dictionary["username"]);
+            driver.FindElement(password).SendKeys(dictionary["password"]);
         }
 
         public AddItempage ClickOnLog()

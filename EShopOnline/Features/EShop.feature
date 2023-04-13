@@ -6,8 +6,10 @@ A short summary of the feature
 Scenario: Add product and place order
 	Given Open Home Page
 	Then Click on login
-	When Enter email 'admin@microsoft.com'
-	And Enter password 'Pass@word1'
+	When Enter Credentials
+	| Key         | Value                  |
+	| username    | admin@microsoft.com |
+	| password    | Pass@word1             |
 	Then Successfull login
 	When Add item
 	Then Go to checkout

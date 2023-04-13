@@ -6,14 +6,18 @@ A short summary of the feature
 Scenario: InValid Login
 	Given Navigate to Home Page
 	Then Click login
-	When Enter mail 'admin123@microsoft.com'
-	And Enter pass 'Pass@word1'
+	When Enter Credentials
+	| Key         | Value                  |
+	| username    | admin123@microsoft.com |
+	| password    | Pass@word1             |
 	Then Invalid login
 	
 @tag1
 Scenario: Valid Login	
 	Given Open Home Page
 	Then Click on login
-	When Enter email 'admin@microsoft.com'
-	And Enter password 'Pass@word1'
+	When Enter Credentials
+	| Key         | Value                  |
+	| username    | admin@microsoft.com |
+	| password    | Pass@word1             |
 	Then Successfull login

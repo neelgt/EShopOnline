@@ -35,24 +35,6 @@ namespace EShopOnline.StepDefinitions
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
-        [When(@"Enter mail '([^']*)'")]
-        public void WhenEnterMail(string mail)
-        {
-            invalidLoginPage = new InvalidLoginPage(driver);
-
-            invalidLoginPage.ClickEmail(mail);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        }
-
-        [When(@"Enter pass '([^']*)'")]
-        public void WhenEnterPass(string pass)
-        {
-            invalidLoginPage = new InvalidLoginPage(driver);
-
-            invalidLoginPage.ClickPassword(pass);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        }
-
         [Then(@"Invalid login")]
         public void ThenInvalidLogin()
         {

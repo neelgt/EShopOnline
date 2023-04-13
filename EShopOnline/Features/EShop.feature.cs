@@ -108,22 +108,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.Then("Click on login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Key",
+                            "Value"});
+                table1.AddRow(new string[] {
+                            "username",
+                            "admin@microsoft.com"});
+                table1.AddRow(new string[] {
+                            "password",
+                            "Pass@word1"});
 #line 9
- testRunner.When("Enter email \'admin@microsoft.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 10
- testRunner.And("Enter password \'Pass@word1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 11
- testRunner.Then("Successfull login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 12
- testRunner.When("Add item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Enter Credentials", ((string)(null)), table1, "When ");
 #line hidden
 #line 13
- testRunner.Then("Go to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Successfull login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 14
+ testRunner.When("Add item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 15
+ testRunner.Then("Go to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 16
  testRunner.And("Place order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
